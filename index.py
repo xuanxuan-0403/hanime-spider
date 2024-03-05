@@ -52,7 +52,7 @@ def getFirstPageData(hrefs: list[str]):
 def handleDownloadAudio(hrefs: list[str]):
     print(hrefs)
     download_urls = []
-    info = []
+    infos = []
     for href in hrefs:
         download_resp = requests.get(url=href, headers=headers)
         if download_resp.status_code == 200:
@@ -62,11 +62,11 @@ def handleDownloadAudio(hrefs: list[str]):
             download_href = download_result.group('href')
             info_title_result = info_title_regex.search(download_resp.text)
             info_title = info_title_result.group('title')
-            download_urls.append(download_href)
-            info.append({'title': info_title, 'url': download_href})
+            download_urls.append(download_href.replace('&amp;', '&'))
+            infos.append({'title': info_title, 'url': download_href.replace('&amp;', '&')})
             download_resp.close()
 
-    return info, download_urls
+    return infos, download_urls
 
 
 
