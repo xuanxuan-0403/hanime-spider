@@ -95,4 +95,6 @@ pytest_cache/
 Pipfile.lock
 
 #
-assets/
+download/
+
+*.spec

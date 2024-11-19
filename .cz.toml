@@ -1,0 +1,7 @@
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "0.0.3"
+version_scheme = "pep440"
+version = "0.0.1"
+update_changelog_on_bump = true
+major_version_zero = true

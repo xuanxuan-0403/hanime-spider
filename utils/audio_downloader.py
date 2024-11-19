@@ -7,7 +7,7 @@ from tqdm import tqdm
 def downloadAudio(name: str, path_name: str, url: str):
     try:
         # 确保目标文件夹存在，如果不存在则创建它
-        target_folder = f'./assets/{name}'
+        target_folder = f'./download/{name}'
         os.makedirs(target_folder, exist_ok=True)
 
         response = requests.get(url, stream=True, timeout=60)
@@ -15,7 +15,7 @@ def downloadAudio(name: str, path_name: str, url: str):
         block_size = 1024  # 1KB
         progress_bar = tqdm(total=total_size, unit='B', unit_scale=True)
 
-        with open(f"./assets/{name}/{path_name}.mp4", 'wb') as file:
+        with open(f"./download/{name}/{path_name}.mp4", 'wb') as file:
             for data in response.iter_content(chunk_size=block_size):
                 progress_bar.update(len(data))
                 file.write(data)
