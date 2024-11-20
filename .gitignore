@@ -96,5 +96,6 @@ Pipfile.lock
 
 #
 download/
+info/
 
 *.spec

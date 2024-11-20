@@ -9,7 +9,7 @@ headers = {
 
 
 # 获取第一集的信息
-def getTvInfo(path: str, videoArr: list[str]):
+def getAnimeInfo(path: str, videoArr: list[str]):
     info = {
         "title": '',  # 原标题
         "artistName": '',  # 艺术家
@@ -53,4 +53,4 @@ def getTvInfo(path: str, videoArr: list[str]):
 
 
 if __name__ == '__main__':
-    getTvInfo('test.json', ['https://hanime1.me/watch?v=13007'])
+    getAnimeInfo('test.json', ['https://hanime1.me/watch?v=13007'])
